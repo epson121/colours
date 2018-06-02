@@ -4,10 +4,10 @@ namespace Deployer;
 require 'recipe/symfony.php';
 
 // Project name
-set('application', 'my_project');
+set('application', 'colours');
 
 // Project repository
-set('repository', '');
+set('repository', 'git@github.com:epson121/colours.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
@@ -20,16 +20,18 @@ add('shared_dirs', []);
 add('writable_dirs', []);
 set('allow_anonymous_stats', false);
 
-// Hosts
-
-host('project.com')
-    ->set('deploy_path', '~/{{application}}');    
+/*
+ * Hosts
+ */
+inventory('hosts.yml');   
     
 // Tasks
 
 task('build', function () {
     run('cd {{release_path}} && build');
 });
+
+
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
