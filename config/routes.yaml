@@ -1,7 +1,7 @@
 index:
-    path: /{r}/{g}/{b}
+    path: /
     controller: App\Controller\IndexController::generateAction
 
 colour:
-    path:     /colour/{r}/{g}/{b}
+    path:     /{r}/{g}/{b}
     controller: App\Controller\IndexController::generateAction
