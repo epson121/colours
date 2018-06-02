@@ -1,0 +1,7 @@
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+ind:
+    path:     /colour/{r}/{g}/{b}
+    controller: App\Controller\IndexController::generateAction
