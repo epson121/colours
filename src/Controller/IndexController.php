@@ -15,8 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 class IndexController
 {
 
-    const X = 2048;
-    const Y = 80;
+    const X = 20;
+    const Y = 20;
 
     /**
      * @var Image
@@ -42,6 +42,18 @@ class IndexController
             [
                 'Content-Type' => 'image/png'
             ]
+        );
+    }
+
+    /**
+     * @return Response
+     */
+    public function generateRandomAction()
+    {
+        return $this->generateAction(
+          rand(0, 255),
+          rand(0, 255),
+          rand(0, 255)
         );
     }
 

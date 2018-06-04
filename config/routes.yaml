@@ -2,6 +2,10 @@ index:
     path: /
     controller: App\Controller\IndexController::generateAction
 
+rand-colour:
+    path:     /random
+    controller: App\Controller\IndexController::generateRandomAction
+
 colour:
     path:     /{r}/{g}/{b}
     controller: App\Controller\IndexController::generateAction
